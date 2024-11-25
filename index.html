@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Vivienne sabo</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: pink;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+            min-height: 70vh; 
+        }
+        footer {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+        @media (max-width: 980px) {
+            main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            header, footer {
+                padding: 10px;
+            }
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .product:hover {
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+        }
+        #map {
+            height: 300px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Vivienne Sabo</h1>
+    <nav class="navbar navbar-expand-sm">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="index.html">О нас</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="contacts.html">Контакты</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="product">
+        <h2>Cabaret</h2>
+        <img
+        src="cabaret.png"
+        style="width: 100%;">
+        <p>CABARET - настоящая легенда среди тушей! О ней говорят. Её любят. Её всегда узнают. 
+            Ведь с ее помощью можно создать бесподобный сценический макияж с акцентом на ресницы.
+            Упругая пластиковая щеточка с зауженным кончиком позволяет равномерно распределить
+            тушь по ресницам, разделяя их и придавая суперобъем!</p>
+        <button class="btn btn-primary">471р</button>
+    </div>
+    <div class="product">
+        <h2>Macaron</h2>
+        <img 
+        src="blush.png"
+        style="width: 100%;">
+        <p>MACARON — румяна от VIVIENNE SABÓ в четырех оттенках с матовым финишем. Это сочетание нежности, легкости и натуральности</p>
+        <button class="btn btn-primary">422p</button>
+    </div>
+    <div class="product">
+        <h2>Brow Arcade</h2>
+        <img
+        src="brow.png"
+        style="width: 100%;">
+        <p>БЕЗУПРЕЧНЫЕ БРОВИ ЗА СЧИТАННЫЕ СЕКУНДЫ!!
+
+            Идеальные брови – это не миф! С автоматическими карандашами BROW ARСADE приблизиться к идеалу стало просто.</p>
+        <button class="btn btn-primary">497p</button>
+    </div>
+    <div class="product">
+        <h2>Tititint</h2>
+        <img
+        src="tint.png"
+        style="width: 100%;">
+        <p>TITITINT — восемь тинтов от VIVIENNE SABÓ с совершенно новой инновационной текстурой. 
+            Они придают губам стойкий цвет, а также обеспечивают комфорт и увлажнение.</p>
+        <button class="btn btn-primary">488p</button>
+    </div>
+    <div class="product">
+        <h2>Nude Createur</h2>
+        <img
+        src="nude.png"
+        style="width: 100%;">
+        <p>Кто сказал, что нюд – это скучно? Новая помада Nude Créateur вдохновит тебя на творчество в ежедневном макияже!
+            20 восхитительных оттенков - от модных нюдовых до классического красного - стойко держатся на губах и подходят абсолютно всем.
+            Ее пластичная кремовая текстура легко наносится, не растекается за контур, создает безупречное покрытие и идеально подходит для ежедневного использования.
+            Nude Сréateur – твой манифест и твой инструмент поиска своего уникального образа.</p>
+        <button class="btn btn-primary">385p</button>
+    </div>
+    <div class="product">
+        <h2>Cabaret Première</h2>
+        <img
+        src="vodka.png"
+        style="width: 100%;">
+        <p>Подводка-фломастер CABARET PREMIÈRE — это эффектные стрелки, которые не потеряют формы в течение всего дня!
+             Благодаря тонкому конусообразному аппликатору фломастер рисует четкий контур и невероятно удобен в применении. 
+             Подводка не растекается, быстро фиксируется и не стягивает нежную кожу век. Современная упаковка air-tight 
+             предотвращает высыхание продукта.</p>
+        <button class="btn btn-primary">609p</button>
+    </div>
+</main>
+
+<footer>
+    <h3>Наш адрес</h3>
+    <div id="map"></div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    var map = L.map('map').setView([55.751244, 37.618423], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    var marker = L.marker([55.751244, 37.618423]).addTo(map);
+    marker.bindPopup("<b>Мы здесь!</b>").openPopup();
+</script>
+</body>
+</html>

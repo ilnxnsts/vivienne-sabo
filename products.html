@@ -1,0 +1,77 @@
+!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Vivienne sabo</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: pink;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+            min-height: 70vh; 
+        }
+        footer {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+        @media (max-width: 980px) {
+            main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            header, footer {
+                padding: 10px;
+            }
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .product:hover {
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+        }
+        #map {
+            height: 300px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+        <header>
+            <h1>Vivienne Sabo</h1>
+            <nav class="navbar navbar-expand-sm">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index.html">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+</body>
