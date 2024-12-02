@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <title>Vivienne sabo</title>
+    <title>Vivienne Sabo</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #f9f9f9; 
         }
         header {
             background-color: pink;
@@ -21,7 +22,10 @@
         }
         main {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: 
+                "product1 product2 product3"
+                "product4 product5 product6"
+                "product7 product8 product8"; 
             grid-gap: 20px;
             padding: 20px;
             min-height: 70vh; 
@@ -33,7 +37,11 @@
         }
         @media (max-width: 980px) {
             main {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-areas: 
+                    "product1 product2"
+                    "product3 product4"
+                    "product5 product6"
+                    "product7 product8";
             }
         }
         @media (max-width: 600px) {
@@ -41,23 +49,43 @@
                 padding: 10px;
             }
             main {
-                grid-template-columns: 1fr;
+                grid-template-areas: 
+                    "product1"
+                    "product2"
+                    "product3"
+                    "product4"
+                    "product5"
+                    "product6"
+                    "product7"
+                    "product8";
             }
         }
         .product {
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 10px; 
             padding: 15px;
             text-align: center;
-            transition: box-shadow 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            background-color: rgb(240, 204, 232); 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
         }
         .product:hover {
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05); 
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2); 
         }
         #map {
             height: 300px;
             width: 100%;
         }
+
+        .product1 { grid-area: product1; }
+        .product2 { grid-area: product2; }
+        .product3 { grid-area: product3; }
+        .product4 { grid-area: product4; }
+        .product5 { grid-area: product5; }
+        .product6 { grid-area: product6; }
+        .product7 { grid-area: product7; }
+        .product8 { grid-area: product8; }
     </style>
 </head>
 <body>
@@ -77,60 +105,47 @@
 </header>
 
 <main>
-    <div class="product">
+    <div class="product product1">
         <h2>Cabaret</h2>
-        <img
-        src="cabaret.png"
-        style="width: 100%;">
+        <img src="cabaret.png" style="width: 100%;">
         <p>CABARET - настоящая легенда среди тушей! О ней говорят. Её любят. Её всегда узнают. 
             Ведь с ее помощью можно создать бесподобный сценический макияж с акцентом на ресницы.
             Упругая пластиковая щеточка с зауженным кончиком позволяет равномерно распределить
             тушь по ресницам, разделяя их и придавая суперобъем!</p>
         <button class="btn btn-primary">471р</button>
     </div>
-    <div class="product">
+    <div class="product product2">
         <h2>Macaron</h2>
-        <img 
-        src="blush.png"
-        style="width: 100%;">
+        <img src="blush.png" style="width: 100%;">
         <p>MACARON — румяна от VIVIENNE SABÓ в четырех оттенках с матовым финишем. Это сочетание нежности, легкости и натуральности</p>
         <button class="btn btn-primary">422p</button>
     </div>
-    <div class="product">
+    <div class="product product3">
         <h2>Brow Arcade</h2>
-        <img
-        src="brow.png"
-        style="width: 100%;">
+        <img src="brow.png" style="width: 100%;">
         <p>БЕЗУПРЕЧНЫЕ БРОВИ ЗА СЧИТАННЫЕ СЕКУНДЫ!!
-
             Идеальные брови – это не миф! С автоматическими карандашами BROW ARСADE приблизиться к идеалу стало просто.</p>
         <button class="btn btn-primary">497p</button>
     </div>
-    <div class="product">
+    <div class="product product4">
         <h2>Tititint</h2>
-        <img
-        src="tint.png"
-        style="width: 100%;">
+        <img src="tint.png" style="width: 100%;">
         <p>TITITINT — восемь тинтов от VIVIENNE SABÓ с совершенно новой инновационной текстурой. 
             Они придают губам стойкий цвет, а также обеспечивают комфорт и увлажнение.</p>
         <button class="btn btn-primary">488p</button>
     </div>
-    <div class="product">
+    <div class="product product5">
         <h2>Nude Createur</h2>
-        <img
-        src="nude.png"
-        style="width: 100%;">
+        <img src="nude.png" style="width: 100%;">
         <p>Кто сказал, что нюд – это скучно? Новая помада Nude Créateur вдохновит тебя на творчество в ежедневном макияже!
             20 восхитительных оттенков - от модных нюдовых до классического красного - стойко держатся на губах и подходят абсолютно всем.
             Ее пластичная кремовая текстура легко наносится, не растекается за контур, создает безупречное покрытие и идеально подходит для ежедневного использования.
             Nude Сréateur – твой манифест и твой инструмент поиска своего уникального образа.</p>
         <button class="btn btn-primary">385p</button>
     </div>
-    <div class="product">
+    <div class="product product6">
         <h2>Cabaret Première</h2>
-        <img
-        src="vodka.png"
-        style="width: 100%;">
+        <img src="vodka.png" style="width: 100%;">
         <p>Подводка-фломастер CABARET PREMIÈRE — это эффектные стрелки, которые не потеряют формы в течение всего дня!
              Благодаря тонкому конусообразному аппликатору фломастер рисует четкий контур и невероятно удобен в применении. 
              Подводка не растекается, быстро фиксируется и не стягивает нежную кожу век. Современная упаковка air-tight 
